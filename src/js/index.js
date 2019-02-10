@@ -1,3 +1,5 @@
+import "../styles/main.scss";
+
 function addElement() {
 	const newDiv = document.createElement("div");
 	const newContent = document.createTextNode("TEST: LETS DO THIS! 💪💪💪");

@@ -1,0 +1,35 @@
+/**
+ * Mixins
+*/
+
+// Media queries
+@mixin mobile {
+	@media (max-width: #{$breakpoint-mobile}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$breakpoint-desktop}) {
+		@content;
+	}
+}
+
+
+// Clearfix
+@mixin clearfix {
+	&::after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+}
+
+// Text selection
+@mixin text-selection($color-selection, $color-selection-bg) {
+	&::selection {
+		background: $color-selection-bg;
+		color: $color-selection;
+		text-shadow: none;
+	}
+}

@@ -1,0 +1,42 @@
+/**
+ * Variables
+*/
+
+// Base Colors
+$color-black: #000000;
+$color-white: #ffffff;
+
+// Accents
+$color-black-50: rgba($color-black, .50);
+$color-black-05: rgba($color-black, .05);
+
+// Brand Colors
+$color-brand-primary: #ec008c;
+$color-brand-seconday: #eeeeee;
+
+// Typography
+$font-family-primary: "Galaxie";
+$font-family-brand: "HUGE Avant Garde Bold",
+sans-serif;
+
+$font-family-body: $font-family-primary;
+$font-family-heading: $font-family-brand;
+
+// Spacing
+$spacing-base: 24px;
+$spacing-small: $spacing-base / 2;
+$spacing-large: $spacing-base * 2;
+
+// Content Max Width
+$container-width: 968px;
+$container-spacing: $spacing-small;
+
+// Breakpoints
+$breakpoint-desktop: 768px;
+$breakpoint-mobile: $breakpoint-desktop - 1px;
+
+// Z Index
+$z-index-base: 0;
+
+// Transitions
+$transition-duration-base: .3s;
