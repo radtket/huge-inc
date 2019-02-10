@@ -7,3 +7,36 @@
 	padding-right: $container-spacing;
 	width: 100%;
 }
+
+// Hero
+.section-hero {
+	background-image: url("../images/background-image.jpg");
+	text-align: center;
+
+	.container {
+		display: table;
+		width: 100%;
+
+		@include mobile {
+			min-height: 240px;
+		}
+
+		@include desktop {
+			min-height: 640px;
+		}
+
+		>h2 {
+			color: $color-white;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+}
+
+
+
+// Intro
+.section-intro {
+	padding-bottom: 60px;
+	padding-top: 60px;
+}

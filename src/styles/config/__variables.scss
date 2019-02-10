@@ -1,7 +1,3 @@
-/**
- * Variables
-*/
-
 // Base Colors
 $color-black: #000000;
 $color-white: #ffffff;
@@ -37,6 +33,10 @@ $breakpoint-mobile: $breakpoint-desktop - 1px;
 
 // Z Index
 $z-index-base: 0;
+$z-index--site-overlay: 1;
+$z-index--navbar: 2;
+$navbar-z-index--primary: 3;
+$navbar-z-index--secondary: 4;
 
 // Transitions
 $transition-duration-base: .3s;

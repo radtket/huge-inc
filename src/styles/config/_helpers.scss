@@ -1,0 +1,11 @@
+%js-slides-down--hidden {
+	display: none;
+	height: 0;
+	overflow: hidden;
+	transition: height 350ms ease-in-out;
+}
+
+%js-slides-down--visible {
+	display: block;
+	height: auto;
+}

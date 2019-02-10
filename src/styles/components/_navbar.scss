@@ -1,1 +1,377 @@
+// Navigation Variables
+$navbar-background: $color-brand-primary;
+$navbar-font-color: $color-white;
+$navbar-link-family: $font-family-brand;
+$navbar-link-line-height: $spacing-large;
 
+$navbar-primary-link--color: $color-white;
+$navbar-primary-link--hover-color: $color-brand-primary;
+$navbar-primary-link--hover-bg: $color-white;
+
+$navbar-height-desktop: $spacing-base * 3;
+$navbar-height-mobile: 60px;
+
+
+
+$navbar-height-desktop--offset: ($navbar-height-desktop - $navbar-link-line-height) / 2;
+
+$navbar-subnav--color-bg: $color-white;
+$navbar-subnav--color-text: $color-black;
+
+$navbar-subnav--text-family: $font-family-primary;
+
+
+$hamburger-btn--height: $navbar-height-mobile;
+$hamburger-btn--width: $navbar-height-desktop;
+
+$hamburger-bar-height: 4px;
+$hamburger-bar-spacing: $hamburger-bar-height * 2;
+
+$hamburger-width: $spacing-base;
+$hamburger-height: $hamburger-width - $hamburger-bar-height;
+
+body {
+	background-color: $color-white;
+
+	@include mobile {
+		margin-top: $navbar-height-mobile;
+	}
+
+	@include desktop {
+		margin-top: $navbar-height-desktop;
+	}
+}
+
+
+
+.hamburger-btn {
+	@include mobile {
+		background: transparent;
+		border: 0;
+		cursor: pointer;
+		display: block;
+		height: $hamburger-btn--height;
+		left: -$spacing-small;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		transition: left $transition-duration-base linear, margin $transition-duration-base linear;
+		width: $hamburger-btn--width;
+		z-index: 9;
+
+		&:focus {
+			outline: none;
+
+			.hamburger {
+				outline: $color-brand-seconday auto 5px;
+			}
+		}
+	}
+
+	@include desktop {
+		display: none;
+	}
+}
+
+.hamburger {
+	@include mobile {
+		background: transparent;
+		border: 0;
+		cursor: pointer;
+		display: inline-block;
+		height: $hamburger-height;
+		left: 50%;
+		margin: 0 0 0 (-$hamburger-width / 2);
+		position: absolute;
+		top: ($navbar-height-mobile - $hamburger-height) / 2;
+		transform: rotate(0deg);
+		transition: .5s ease-in-out;
+		width: $hamburger-width;
+
+		span {
+			background: $color-brand-seconday;
+			border-radius: 0;
+			display: block;
+			height: $hamburger-bar-spacing / 2;
+			left: 0;
+			opacity: 1;
+			position: absolute;
+			transform: rotate(0deg);
+			transition: .25s ease-in-out;
+			width: 100%;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				top: $hamburger-bar-spacing;
+			}
+
+			&:nth-child(4) {
+				top: $hamburger-bar-spacing * 2;
+			}
+		}
+	}
+}
+
+
+
+
+// Outer navigation wrapper
+.navigation {
+	background: $navbar-background;
+	height: $navbar-height-desktop;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: $z-index--navbar;
+
+	@include mobile {
+		height: $navbar-height-mobile;
+	}
+
+	&-branding {
+
+		@include mobile {
+			height: $navbar-height-mobile;
+			left: -100%;
+			position: absolute;
+			top: 0;
+			transition: left $transition-duration-base linear;
+		}
+
+		@include desktop {
+			display: none;
+		}
+
+		&__svg {
+
+			@include mobile {
+				fill: $navbar-font-color;
+				height: 100%;
+				padding: 20px 24px;
+			}
+		}
+	}
+
+	.container {
+		height: 100%;
+	}
+
+	nav {
+
+		@include mobile {
+			background-color: $color-white;
+			color: $color-black;
+			height: unquote("calc(100vh - ")$navbar-height-mobile unquote(")");
+			left: 0;
+			overflow-y: auto;
+			padding-left: 0;
+			position: absolute;
+			right: 100%;
+			top: $navbar-height-mobile;
+			transition: right $transition-duration-base linear;
+		}
+
+
+		@include desktop {
+			float: left;
+		}
+	}
+
+	.nav-list {
+		@include clearfix;
+		display: block;
+		position: relative;
+
+		@include desktop {
+			top: $navbar-height-desktop--offset;
+
+			@supports (display: flex) {
+				display: flex;
+				height: $navbar-height-desktop;
+				top: unset;
+			}
+		}
+
+		&__item {
+			display: block;
+			position: relative;
+
+			@include desktop {
+				float: left;
+			}
+
+			a {
+				cursor: pointer;
+				display: block;
+				font-family: $navbar-link-family;
+				line-height: $navbar-link-line-height;
+				padding-left: $spacing-base;
+				padding-right: $spacing-base;
+			}
+
+			>a {
+				font-size: 21px;
+				transition: color $transition-duration-base cubic-bezier(0, 0, 0.58, 1), background-color $transition-duration-base cubic-bezier(0, 0, 0.58, 1);
+
+
+				@supports (display: flex) {
+					align-items: center;
+					display: flex;
+					height: 100%;
+				}
+
+				@include mobile {
+					color: $color-black;
+
+					&:hover {
+						background-color: $color-brand-seconday;
+					}
+
+					&.toggle {
+						position: relative;
+
+						&::after {
+							background-image: url("../images/svg/chevron.svg");
+							background-position: center center;
+							background-repeat: no-repeat;
+							background-size: contain;
+							content: "";
+							height: $spacing-large;
+							position: absolute;
+							right: 14px;
+							top: 0;
+							transition: transform $transition-duration-base cubic-bezier(0, 0, 0.58, 1);
+							width: 20px;
+						}
+
+						&.is-active {
+							&::after {
+								transform: rotate(180deg);
+							}
+						}
+					}
+				}
+
+				@include desktop {
+					color: $navbar-primary-link--color;
+
+					&:hover {
+						background-color: $navbar-primary-link--hover-bg;
+						color: $navbar-primary-link--hover-color;
+					}
+				}
+			}
+		}
+
+		&__subnav {
+			@extend %js-slides-down--hidden;
+			background: $navbar-subnav--color-bg;
+			left: 0;
+
+			white-space: nowrap;
+			z-index: $navbar-z-index--secondary;
+
+			@include mobile {
+				position: relative;
+				top: 100%;
+			}
+
+			@include desktop {
+				position: absolute;
+				top: $navbar-height-desktop - $navbar-height-desktop--offset;
+
+				@supports (display: flex) {
+					top: $navbar-height-desktop;
+				}
+			}
+
+			&.is-visible {
+				@extend %js-slides-down--visible;
+			}
+
+			&--item {
+				display: block;
+
+				a {
+					color: $navbar-subnav--color-text;
+					font-family: $navbar-subnav--text-family;
+					font-size: 16px;
+					overflow: hidden;
+					transition-duration: color $transition-duration-base cubic-bezier(0, 0, 0.58, 1), background-color $transition-duration-base cubic-bezier(0, 0, 0.58, 1);
+
+					&:hover {
+						background: $color-brand-seconday;
+						color: $color-brand-primary;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.drawer-open {
+
+	@include mobile {
+
+		.hamburger {
+
+			&-btn {
+				left: 100%;
+				margin-left: -($hamburger-btn--width - $spacing-small);
+			}
+
+			span {
+
+				&:nth-child(1),
+				&:nth-child(4) {
+					left: 50%;
+					top: $hamburger-bar-spacing;
+					width: 0;
+				}
+
+				&:nth-child(2) {
+					transform: rotate(45deg);
+				}
+
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+
+	.navigation {
+		&-branding {
+			@include mobile {
+				left: 0;
+			}
+		}
+	}
+
+	nav {
+		@include mobile {
+			right: $navbar-height-desktop;
+		}
+	}
+}
+
+
+.toggle-content {
+	display: none;
+	height: 0;
+	overflow: hidden;
+	transition: height $transition-duration-base ease-in-out;
+
+	&.is-visible {
+		display: block;
+		height: auto;
+	}
+}
