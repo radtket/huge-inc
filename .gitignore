@@ -1,0 +1,20 @@
+# Windows
+Thumbs.db
+
+# Mac OS X
+.DS_Store
+._.*
+._*
+
+# Ignore local editor
+.vscode
+.project
+.settings
+.idea
+*.swp
+tags
+nbproject/*
+
+npm-debug.log
+node_modules
+dist/

@@ -1,0 +1,17 @@
+{
+	"parser": "babel-eslint",
+	"extends": ["airbnb", "prettier"],
+	"plugins": ["prettier"],
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es6": true,
+		"jasmine": true,
+		"node": true
+	},
+	"globals": {
+		"browser": false,
+		"window": true,
+		"document": true
+	}
+}

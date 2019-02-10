@@ -1,23 +1,62 @@
 {
-  "name": "NavExercise",
-  "description": "Exercise for candidates to complete where they will build a responsive nav driven from json",
-  "version": "0.1.1",
-  "authors": [
-    "Wes Hatch <whatch@hugeinc.com>",
-    "Karl Stanton <kstanton@hugeinc.com>"
-  ],
-  "license": "© 2016 Huge. All Rights Reserved.",
-  "homepage": "https://github.com/hugeinc/NavExercise",
-  "bugs": {
-    "url": "https://github.com/hugeinc/NavExercise/issues"
-  },
-  "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "express": "~4.2.0",
-    "morgan": "~1.0.0"
-  }
+	"name": "huge-inc",
+	"version": "1.0.0",
+	"description": "Building Something iLove",
+	"authors": [
+		"Wes Hatch <whatch@hugeinc.com>",
+		"Karl Stanton <kstanton@hugeinc.com>"
+	],
+	"license": "© 2016 Huge. All Rights Reserved.",
+	"homepage": "https://github.com/hugeinc/NavExercise",
+	"bugs": {
+		"url": "https://github.com/hugeinc/NavExercise/issues"
+	},
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"nodemon": "nodemon ./bin/www localhost 3000",
+		"start": "webpack-dev-server --config webpack.dev.js --mode development",
+		"build": "webpack --config webpack.prod.js --mode production",
+		"preview": "npm run build && http-server public"
+	},
+	"dependencies": {
+		"autoprefixer": "^9.4.7",
+		"babel-eslint": "^10.0.1",
+		"babel-loader": "^8.0.5",
+		"babel-preset-env": "^1.7.0",
+		"clean-webpack-plugin": "^1.0.1",
+		"css-loader": "^2.1.0",
+		"cssnano": "^4.1.8",
+		"eslint-config-prettier": "^4.0.0",
+		"eslint-plugin-prettier": "^3.0.1",
+		"express": "^4.16.4",
+		"favicons-webpack-plugin": "0.0.9",
+		"file-loader": "^3.0.1",
+		"html-webpack-plugin": "^3.2.0",
+		"http-server": "^0.11.1",
+		"import-glob-loader": "^1.1.0",
+		"mini-css-extract-plugin": "^0.5.0",
+		"morgan": "^1.9.1",
+		"optimize-css-assets-webpack-plugin": "^5.0.1",
+		"postcss-loader": "^3.0.0",
+		"prettier": "^1.16.4",
+		"source-map-loader": "^0.2.4",
+		"style-loader": "^0.23.1",
+		"url-loader": "^1.1.2",
+		"webpack-cli": "^3.2.3",
+		"webpack-dev-server": "^3.1.14"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.2.3",
+		"@babel/core": "^7.2.2",
+		"@babel/preset-env": "^7.3.1",
+		"eslint": "^5.3.0",
+		"eslint-config-airbnb": "^17.1.0",
+		"eslint-plugin-import": "^2.16.0",
+		"eslint-plugin-jsx-a11y": "^6.2.1",
+		"eslint-plugin-react": "^7.12.4",
+		"node-sass": "^4.11.0",
+		"sass-loader": "^7.1.0",
+		"webpack": "^4.29.3"
+	}
 }

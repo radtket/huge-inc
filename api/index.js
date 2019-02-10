@@ -1,11 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var path = require('path');
+const express = require("express");
 
-var DATA_DIR = path.join(__dirname, '..', 'data');
+const router = express.Router();
+const path = require("path");
 
-router.get('*', function(req, res) {
-  res.sendfile(path.join(DATA_DIR, req.url));
+const DATA_DIR = path.join(__dirname, "..", "data");
+
+router.get("*", (req, res) => {
+	res.sendfile(path.join(DATA_DIR, req.url));
 });
 
 module.exports = router;
