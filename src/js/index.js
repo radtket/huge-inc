@@ -1,4 +1,5 @@
 import "../styles/main.scss";
+import initNav from "./components/navbar";
 
 function addElement() {
 	const newDiv = document.createElement("div");
@@ -10,3 +11,5 @@ function addElement() {
 }
 
 document.body.onload = addElement;
+
+initNav();

@@ -5,9 +5,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
 	devtool: "eval-cheap-module-source-map",
 	entry: "./src/js/index.js",
+	output: {
+		filename: "[name].[hash:20].js",
+		path: path.join(__dirname, "public")
+	},
 	devServer: {
-		port: 8080,
-		contentBase: path.join(__dirname, "public")
+		port: 3000,
+		contentBase: path.join(__dirname, "public"),
+		before(app) {
+			app.get("/api", (req, res) => {
+				res.sendFile(path.join(__dirname, "data/nav.json"));
+			});
+		}
 	},
 	node: {
 		fs: "empty"
