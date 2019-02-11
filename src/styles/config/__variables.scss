@@ -11,9 +11,16 @@ $color-brand-primary: #ec008c;
 $color-brand-seconday: #eeeeee;
 
 // Typography
-$font-family-primary: "Galaxie";
-$font-family-brand: "HUGE Avant Garde Bold",
+$font-family-helvetica: "Helvetica Neue",
+Helvetica,
+Arial,
 sans-serif;
+
+$font-family-primary: "Galaxie",
+$font-family-helvetica;
+
+$font-family-brand: "HUGE Avant Garde Bold",
+$font-family-helvetica;
 
 $font-family-body: $font-family-primary;
 $font-family-heading: $font-family-brand;
@@ -53,6 +60,10 @@ $navbar-primary-link--hover-bg: $color-white;
 
 $navbar-height-desktop: $spacing-base * 3;
 $navbar-height-mobile: 60px;
+
+$navbar-logo-size: 20px;
+$navbar-logo-spacing--mobile: ($navbar-height-mobile - $navbar-logo-size) / 2;
+$navbar-logo-spacing--desktop: ($navbar-height-desktop - $navbar-logo-size) / 2;
 
 // Navbar - Sub Nav
 $navbar-height-desktop--offset: ($navbar-height-desktop - $navbar-link-line-height) / 2;

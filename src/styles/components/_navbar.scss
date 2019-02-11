@@ -14,9 +14,12 @@
 
 	.container {
 		height: 100%;
+		max-width: 100%;
 	}
 
 	&-branding {
+		cursor: pointer;
+
 		@include mobile {
 			height: $navbar-height-mobile;
 			left: -100%;
@@ -26,14 +29,33 @@
 		}
 
 		@include desktop {
-			display: none;
+			display: inline-block;
+			float: left;
+			height: $navbar-height-desktop;
+			position: relative;
+
+			&:hover {
+				.navigation-branding__svg {
+					animation: pop $transition-duration-base ease alternate 1;
+				}
+			}
 		}
 
 		&__svg {
+			fill: $navbar-font-color;
+			height: 100%;
+			padding-right: $spacing-base;
+
 			@include mobile {
-				fill: $navbar-font-color;
-				height: 100%;
-				padding: 20px 24px;
+				padding-bottom: $navbar-logo-spacing--mobile;
+				padding-left: $spacing-base;
+				padding-top: $navbar-logo-spacing--mobile;
+			}
+
+			@include desktop {
+				padding-bottom: $navbar-logo-spacing--desktop;
+				padding-left: $spacing-small;
+				padding-top: $navbar-logo-spacing--desktop;
 			}
 		}
 	}
@@ -132,7 +154,6 @@
 				font-size: 21px;
 				transition: color $transition-duration-base cubic-bezier(0, 0, 0.58, 1), background-color $transition-duration-base cubic-bezier(0, 0, 0.58, 1);
 
-
 				@supports (display: flex) {
 					align-items: center;
 					display: flex;
@@ -155,6 +176,19 @@
 						color: $navbar-primary-link--hover-color;
 					}
 				}
+
+				// < Hack: 🙁 Nav was being pushed out of container
+				@media screen and (min-width: $breakpoint-desktop) and (max-width: 829px) {
+					padding-left: $spacing-small;
+					padding-right: $spacing-small;
+				}
+
+				@media screen and (min-width: 830px) and (max-width: 930px) {
+					padding-left: 16px;
+					padding-right: 16px;
+				}
+
+				//  Hack /> 🕺🏿
 			}
 		}
 
@@ -187,7 +221,7 @@
 					font-family: $navbar-subnav--text-family;
 					font-size: 16px;
 					overflow: hidden;
-					transition-duration: color $transition-duration-base cubic-bezier(0, 0, 0.58, 1), background-color $transition-duration-base cubic-bezier(0, 0, 0.58, 1);
+					transition: color $transition-duration-base cubic-bezier(0, 0, 0.58, 1), background-color $transition-duration-base cubic-bezier(0, 0, 0.58, 1);
 
 					&:hover {
 						background: $color-brand-seconday;
@@ -203,11 +237,43 @@
 		@include mobile {
 			&-branding {
 				left: 0;
+
+				.navigation-branding__svg {
+					animation: pop $transition-duration-base ease alternate 1;
+					animation-delay: $transition-duration-base;
+				}
 			}
 
 			nav {
 				right: $navbar-height-desktop;
 			}
+		}
+	}
+
+	// Copyright Footer
+	.copyright {
+		@include mobile {
+			bottom: 0;
+			display: block;
+			font-family: $font-family-helvetica;
+			font-size: $spacing-small;
+			height: $spacing-large;
+			left: 0;
+			line-height: 16px;
+			padding: (($spacing-large - 16px) / 2) $spacing-base;
+			position: absolute;
+
+			>a {
+				transition: color $transition-duration-base ease-in-out;
+
+				&:hover {
+					color: $color-brand-primary;
+				}
+			}
+		}
+
+		@include desktop {
+			display: none;
 		}
 	}
 }

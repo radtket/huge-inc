@@ -1,92 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<meta
-			name="Description"
-			content="Author: Taylor Radtke, Code Challenge for Hunge Inc."
-		/>
 
-		<title>HUGE | NavExercise</title>
-	</head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="Description" content="Author: Taylor Radtke, Code Challenge for Hunge Inc." />
 
-	<body>
-		<!-- Page Loader -->
-		<div class="loader-body" id="loader">
-			<div class="loader"></div>
+	<title>HUGE | NavExercise</title>
+</head>
+
+<body>
+	<!-- Page Loader -->
+	<div class="loader-body" id="loader">
+		<div class="loader"></div>
+	</div>
+	<!-- END // Page Loader -->
+
+	<div class="site-overlay"></div>
+
+	<header class="navigation">
+		<div class="container">
+			<button class="hamburger-btn" role="button" type="button" aria-haspopup="true" aria-controls="js-nav-root"
+			 aria-label="Menu Button opens navigation menu">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+
+			<a href="https://www.hugeinc.com/" target="_blank" rel="external nofollow noopener noreferrer" class="navigation-branding"
+			 aria-label="HUGE Logo">
+				<svg class="navigation-branding__svg" viewBox="0 0 60 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8.112.048v9.936H4.128V.048H.144v23.856h3.984v-9.936h3.984v9.936h3.984V.048H8.112M24.096.048V18.96c0 .528-.432 1.008-1.008 1.008h-2.016a1.014 1.014 0 0 1-1.008-1.008V.048h-3.936v19.92a3.974 3.974 0 0 0 3.984 3.984h3.984a3.974 3.974 0 0 0 3.984-3.984V.048h-3.984M60 4.032V.048H48.048v23.856H60V19.92h-7.968v-5.952h3.984V9.984h-3.984V4.032H60M44.016 6.048V4.032A3.974 3.974 0 0 0 40.032.048h-3.984a3.974 3.974 0 0 0-3.984 3.984v15.936a3.974 3.974 0 0 0 3.984 3.984h3.984a3.974 3.974 0 0 0 3.984-3.984v-9.936h-5.952v3.984h2.016v4.944c0 .528-.432 1.008-1.008 1.008h-2.016a1.014 1.014 0 0 1-1.008-1.008V5.04c0-.528.432-1.008 1.008-1.008h2.016c.528 0 1.008.432 1.008 1.008v1.008h3.936" />
+				</svg>
+			</a>
+
+			<nav>
+				<ul id="js-nav-root" class="nav-list"></ul>
+				<small class="copyright">
+					&copy;
+					<script type="text/javascript">
+						document.write(new Date().getFullYear());
+
+					</script>
+					<a href="https://www.hugeinc.com/" target="_blank" rel="external nofollow noopener noreferrer">Huge.</a>
+					All Rights Reserved.
+				</small>
+			</nav>
 		</div>
-		<!-- END // Page Loader -->
+	</header>
 
-		<div class="site-overlay"></div>
+	<section class="section-intro">
+		<figure class="section-hero" role="img" aria-label="Creatives taking care of buisness at Huge."></figure>
+		<article class="container">
+			<span class="callout__wrap">
+				<h2 class="callout">Get paid for giving a shit.</h2>
+			</span>
 
-		<header class="navigation">
-			<div class="container">
-				<button
-					class="hamburger-btn"
-					role="button"
-					type="button"
-					aria-haspopup="true"
-					aria-controls="js-nav-root"
-					aria-label="Menu Button opens navigation menu"
-				>
-					<div class="hamburger">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-				</button>
+			<p class="lead">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+				minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+				aliquip ex ea commodo consequat. Duis aute irure dolor in
+				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+				culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+			<p class="lead">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+				minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+				aliquip ex ea commodo consequat. Duis aute irure dolor in
+				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+				culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</article>
+	</section>
+</body>
 
-				<figure class="navigation-branding">
-					<svg
-						class="navigation-branding__svg"
-						viewBox="0 0 60 24"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="M8.112.048v9.936H4.128V.048H.144v23.856h3.984v-9.936h3.984v9.936h3.984V.048H8.112M24.096.048V18.96c0 .528-.432 1.008-1.008 1.008h-2.016a1.014 1.014 0 0 1-1.008-1.008V.048h-3.936v19.92a3.974 3.974 0 0 0 3.984 3.984h3.984a3.974 3.974 0 0 0 3.984-3.984V.048h-3.984M60 4.032V.048H48.048v23.856H60V19.92h-7.968v-5.952h3.984V9.984h-3.984V4.032H60M44.016 6.048V4.032A3.974 3.974 0 0 0 40.032.048h-3.984a3.974 3.974 0 0 0-3.984 3.984v15.936a3.974 3.974 0 0 0 3.984 3.984h3.984a3.974 3.974 0 0 0 3.984-3.984v-9.936h-5.952v3.984h2.016v4.944c0 .528-.432 1.008-1.008 1.008h-2.016a1.014 1.014 0 0 1-1.008-1.008V5.04c0-.528.432-1.008 1.008-1.008h2.016c.528 0 1.008.432 1.008 1.008v1.008h3.936"
-						/>
-					</svg>
-				</figure>
-
-				<nav>
-					<ul id="js-nav-root" class="nav-list"></ul>
-				</nav>
-			</div>
-		</header>
-
-		<section class="section-intro">
-			<figure
-				class="section-hero"
-				role="img"
-				aria-label="Creatives taking care of buisness at Huge."
-			></figure>
-			<article class="container">
-				<span class="callout__wrap">
-					<h2 class="callout">Get paid for giving a shit.</h2>
-				</span>
-
-				<p class="lead">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-					minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in
-					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-					culpa qui officia deserunt mollit anim id est laborum.
-				</p>
-				<p class="lead">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-					minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in
-					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-					culpa qui officia deserunt mollit anim id est laborum.
-				</p>
-			</article>
-		</section>
-	</body>
 </html>
