@@ -1,0 +1,97 @@
+.hamburger {
+	@include mobile {
+		background: transparent;
+		border: 0;
+		cursor: pointer;
+		display: inline-block;
+		height: $hamburger-height;
+		left: 50%;
+		margin: 0 0 0 (-$hamburger-width / 2);
+		position: absolute;
+		top: ($navbar-height-mobile - $hamburger-height) / 2;
+		transform: rotate(0deg);
+		transition: .5s ease-in-out;
+		width: $hamburger-width;
+
+		&-btn {
+			background: transparent;
+			border: 0;
+			cursor: pointer;
+			display: block;
+			height: $hamburger-btn--height;
+			left: -$spacing-small;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			transition: left $transition-duration-base linear, margin $transition-duration-base linear;
+			width: $hamburger-btn--width;
+			z-index: 9;
+
+			&:focus {
+				outline: none;
+
+				.hamburger {
+					outline: $color-brand-seconday auto 5px;
+				}
+			}
+		}
+
+		span {
+			background: $color-brand-seconday;
+			border-radius: 0;
+			display: block;
+			height: $hamburger-bar-spacing / 2;
+			left: 0;
+			opacity: 1;
+			position: absolute;
+			transform: rotate(0deg);
+			transition: .25s ease-in-out;
+			width: 100%;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				top: $hamburger-bar-spacing;
+			}
+
+			&:nth-child(4) {
+				top: $hamburger-bar-spacing * 2;
+			}
+		}
+
+		// State - Drawer Open
+		.drawer-open & {
+			&-btn {
+				left: 100%;
+				margin-left: -($hamburger-btn--width - $spacing-small);
+			}
+
+			span {
+
+				&:nth-child(1),
+				&:nth-child(4) {
+					left: 50%;
+					top: $hamburger-bar-spacing;
+					width: 0;
+				}
+
+				&:nth-child(2) {
+					transform: rotate(45deg);
+				}
+
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+
+	&-btn {
+		@include desktop {
+			display: none;
+		}
+	}
+}

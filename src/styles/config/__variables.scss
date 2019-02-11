@@ -40,3 +40,30 @@ $navbar-z-index--secondary: 4;
 
 // Transitions
 $transition-duration-base: .3s;
+
+// Navbar
+$navbar-background: $color-brand-primary;
+$navbar-font-color: $color-white;
+$navbar-link-family: $font-family-brand;
+$navbar-link-line-height: $spacing-large;
+
+$navbar-primary-link--color: $color-white;
+$navbar-primary-link--hover-color: $color-brand-primary;
+$navbar-primary-link--hover-bg: $color-white;
+
+$navbar-height-desktop: $spacing-base * 3;
+$navbar-height-mobile: 60px;
+
+// Navbar - Sub Nav
+$navbar-height-desktop--offset: ($navbar-height-desktop - $navbar-link-line-height) / 2;
+$navbar-subnav--color-bg: $color-white;
+$navbar-subnav--color-text: $color-black;
+$navbar-subnav--text-family: $font-family-primary;
+
+// Navbar - Hamburger
+$hamburger-btn--height: $navbar-height-mobile;
+$hamburger-btn--width: $navbar-height-desktop;
+$hamburger-bar-height: 4px;
+$hamburger-bar-spacing: $hamburger-bar-height * 2;
+$hamburger-width: $spacing-base;
+$hamburger-height: $hamburger-width - $hamburger-bar-height;

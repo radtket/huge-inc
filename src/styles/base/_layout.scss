@@ -1,3 +1,15 @@
+body {
+	background-color: $color-white;
+
+	@include mobile {
+		margin-top: $navbar-height-mobile;
+	}
+
+	@include desktop {
+		margin-top: $navbar-height-desktop;
+	}
+}
+
 .container {
 	@include clearfix;
 	margin-left: auto;
