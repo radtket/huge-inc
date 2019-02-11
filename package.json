@@ -15,7 +15,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"nodemon": "nodemon ./bin/www localhost 3000",
-		"start": "webpack-dev-server --config webpack.dev.js --mode development",
+		"start": "node ./bin/www",
+		"dev": "webpack-dev-server --config webpack.dev.js --mode development",
 		"build": "webpack --config webpack.prod.js --mode production",
 		"preview": "npm run build && http-server public"
 	},
@@ -56,8 +57,11 @@
 		"eslint-plugin-import": "^2.16.0",
 		"eslint-plugin-jsx-a11y": "^6.2.1",
 		"eslint-plugin-react": "^7.12.4",
+		"jimp": "^0.6.0",
 		"node-sass": "^4.11.0",
+		"responsive-loader": "^1.2.0",
 		"sass-loader": "^7.1.0",
+		"sharp": "^0.21.3",
 		"webpack": "^4.29.3"
 	}
 }

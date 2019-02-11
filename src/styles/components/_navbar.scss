@@ -203,12 +203,6 @@
 		@include mobile {
 			&-branding {
 				left: 0;
-
-				&__svg {
-					animation: grow ease alternate infinite;
-					animation-duration: 2s;
-					animation-delay: 0;
-				}
 			}
 
 			nav {

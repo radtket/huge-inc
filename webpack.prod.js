@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const SharpPlugin = require("responsive-loader/sharp");
 const cssnano = require("cssnano");
 
 const buildPath = path.resolve(__dirname, "public");
@@ -65,10 +66,9 @@ module.exports = {
 				test: /\.(png|jpg|gif)$/,
 				use: [
 					{
-						loader: "url-loader",
+						loader: "responsive-loader",
 						options: {
-							name: "[name].[hash:20].[ext]",
-							limit: 8192
+							adapter: SharpPlugin
 						}
 					}
 				]

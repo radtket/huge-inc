@@ -1,6 +1,7 @@
 const path = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const SharpPlugin = require("responsive-loader/sharp");
 
 module.exports = {
 	devtool: "eval-cheap-module-source-map",
@@ -64,10 +65,9 @@ module.exports = {
 				test: /\.(png|jpg|gif)$/,
 				use: [
 					{
-						loader: "url-loader",
+						loader: "responsive-loader",
 						options: {
-							name: "[path][name].[ext]?hash=[hash:20]",
-							limit: 8192
+							adapter: SharpPlugin
 						}
 					}
 				]

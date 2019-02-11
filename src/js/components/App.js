@@ -1,7 +1,7 @@
 import RenderNav from "./RenderNav";
 import PageLoader from "./PageLoader";
 
-import { Toggle, slideUpAllOpenSubNavs } from "./navDropdown";
+import { Toggle, slideUpAllOpenSubNavs } from "./NavDropdown";
 
 class App {
 	constructor() {

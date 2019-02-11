@@ -22,26 +22,20 @@ body {
 
 // Hero
 .section-hero {
-	background-image: url("../images/background-image.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	text-align: center;
+	width: 100%;
 
-	.container {
-		display: table;
-		width: 100%;
+	@include mobile {
+		background-image: url("../images/background-image.jpg?size=767");
+		min-height: 240px;
+	}
 
-		@include mobile {
-			min-height: 240px;
-		}
-
-		@include desktop {
-			min-height: 640px;
-		}
-
-		>h2 {
-			color: $color-white;
-			display: table-cell;
-			vertical-align: middle;
-		}
+	@include desktop {
+		background-image: url("../images/background-image.jpg");
+		min-height: 640px;
 	}
 }
 
@@ -50,5 +44,41 @@ body {
 // Intro
 .section-intro {
 	padding-bottom: 60px;
-	padding-top: 60px;
+	position: relative;
+
+	@include desktop {
+		.lead {
+			&:first-of-type {
+				padding-top: 60px;
+			}
+		}
+	}
+}
+
+.callout {
+	@include mobile {
+		padding-bottom: 40px;
+		padding-top: 50px;
+	}
+
+	@include desktop {
+		color: $color-white;
+		font-size: 120px;
+		height: 640px;
+		position: relative;
+		top: 50%;
+		transform: translateY(-25%);
+
+		&__wrap {
+
+			display: block;
+			height: 640px;
+			left: 50%;
+			margin-left: -$container-width / 2;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: $container-width;
+		}
+	}
 }
