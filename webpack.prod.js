@@ -89,7 +89,7 @@ module.exports = {
 		}),
 		new CleanWebpackPlugin(buildPath),
 		new FaviconsWebpackPlugin({
-			logo: "./src/images/HUGE-white.png",
+			logo: "./src/images/branding/favicon.svg",
 			prefix: "icons-[hash]/",
 			persistentCache: true,
 			inject: true,

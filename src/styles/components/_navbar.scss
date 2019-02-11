@@ -206,6 +206,35 @@ body {
 				float: left;
 			}
 
+
+			@include mobile {
+				&--hassub {
+					>a {
+						position: relative;
+
+						&::after {
+							background-image: url("../images/svg/chevron.svg");
+							background-position: center center;
+							background-repeat: no-repeat;
+							background-size: contain;
+							content: "";
+							height: $spacing-large;
+							position: absolute;
+							right: 14px;
+							top: 0;
+							transition: transform $transition-duration-base cubic-bezier(0, 0, 0.58, 1);
+							width: 20px;
+						}
+
+						&.is-active {
+							&::after {
+								transform: rotate(180deg);
+							}
+						}
+					}
+				}
+			}
+
 			a {
 				cursor: pointer;
 				display: block;
@@ -231,30 +260,6 @@ body {
 
 					&:hover {
 						background-color: $color-brand-seconday;
-					}
-
-					&.toggle {
-						position: relative;
-
-						&::after {
-							background-image: url("../images/svg/chevron.svg");
-							background-position: center center;
-							background-repeat: no-repeat;
-							background-size: contain;
-							content: "";
-							height: $spacing-large;
-							position: absolute;
-							right: 14px;
-							top: 0;
-							transition: transform $transition-duration-base cubic-bezier(0, 0, 0.58, 1);
-							width: 20px;
-						}
-
-						&.is-active {
-							&::after {
-								transform: rotate(180deg);
-							}
-						}
 					}
 				}
 

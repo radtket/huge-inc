@@ -1,13 +1,13 @@
 import "../styles/main.scss";
 
-import PageLoader from "./components/pageLoader";
-import toggle, { slideUpAllOpenSubNavs } from "./components/navDropdown";
+import RenderNav from "./components/RenderNav";
+import PageLoader from "./components/PageLoader";
+import toggle, { slideUpAllOpenSubNavs } from "./components/NavDropdown";
 
 // Constents
 const hamburger = document.querySelector(".hamburger-btn");
 const pageMask = document.querySelector(".site-overlay");
 
-// document.body.onload = PageLoader();
 document.onload = PageLoader();
 
 // Listen for click events
@@ -39,3 +39,7 @@ pageMask.addEventListener("click", e => {
 	target.classList.remove("is-visible");
 	slideUpAllOpenSubNavs();
 });
+
+fetch("/api")
+	.then(item => item.json())
+	.then(res => new RenderNav().createNavItems(res.items));
