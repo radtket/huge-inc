@@ -1,7 +1,6 @@
 import RenderNav from "./RenderNav";
 import PageLoader from "./PageLoader";
-
-import { Toggle, slideUpAllOpenSubNavs } from "./NavDropdown";
+import ToggleSlide from "./NavDropdown";
 
 class App {
 	constructor() {
@@ -9,6 +8,7 @@ class App {
 		window.addEventListener("resize", this.windowResize);
 		this.document = document;
 		this.body = this.document.body;
+		this.toggleSlide = new ToggleSlide();
 	}
 
 	documentLoad = () => {
@@ -19,17 +19,18 @@ class App {
 
 	windowResize = () => {
 		const { classList: bodyClassList } = this.body;
+		const { innerWidth: viewPortSize } = window;
 		const siteOverlay = document.querySelector(".site-overlay");
 		const { classList: siteOverlayClassList } = siteOverlay;
-		if (window.innerWidth >= 767 && bodyClassList.contains("drawer-open")) {
+		const desktopUp = viewPortSize >= 768;
+		const mobileDown = viewPortSize < 767;
+
+		if (desktopUp && bodyClassList.contains("drawer-open")) {
 			bodyClassList.remove("drawer-open");
-			slideUpAllOpenSubNavs();
-		} else if (
-			window.innerWidth < 768 &&
-			siteOverlayClassList.contains("is-visible")
-		) {
+			this.toggleSlide.SlideUpAllOpenSubNavs();
+		} else if (mobileDown && siteOverlayClassList.contains("is-visible")) {
 			siteOverlayClassList.remove("is-visible");
-			slideUpAllOpenSubNavs();
+			this.toggleSlide.SlideUpAllOpenSubNavs();
 		}
 	};
 
@@ -43,7 +44,7 @@ class App {
 		document.querySelector(".site-overlay").addEventListener("click", e => {
 			const { classList } = e.target;
 			classList.remove("is-visible");
-			slideUpAllOpenSubNavs();
+			this.toggleSlide.SlideUpAllOpenSubNavs();
 		});
 
 		document.addEventListener(
@@ -54,7 +55,7 @@ class App {
 				event.preventDefault();
 				const content = parentElement.querySelector(".nav-list__subnav");
 				if (!content) return;
-				Toggle(parentElement);
+				this.toggleSlide.Toggle(parentElement);
 			},
 			false
 		);
