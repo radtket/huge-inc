@@ -2,7 +2,7 @@
 	background: $navbar-background;
 	height: $navbar-height-desktop;
 	left: 0;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	top: 0;
 	width: 100%;
@@ -68,7 +68,7 @@
 			left: 0;
 			overflow-y: auto;
 			padding-left: 0;
-			position: absolute;
+			position: fixed;
 			right: 100%;
 			top: $navbar-height-mobile;
 			transition: right $transition-duration-base linear;
