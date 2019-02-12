@@ -1,6 +1,7 @@
 import RenderNav from "./RenderNav";
 import PageLoader from "./PageLoader";
 import ToggleSlide from "./NavDropdown";
+import data from "./FakeCall";
 
 class App {
 	constructor() {
@@ -13,7 +14,7 @@ class App {
 
 	documentLoad = () => {
 		PageLoader();
-		this.createNav();
+		this.createNav(data.items);
 		this.addClickEvents();
 		this.copyrightDate();
 	};
@@ -68,10 +69,9 @@ class App {
 		);
 	};
 
-	createNav = () => {
-		fetch("/api")
-			.then(item => item.json())
-			.then(res => new RenderNav().createNavItems(res.items));
+	createNav = dataArg => {
+		const renderNav = new RenderNav();
+		renderNav.createNavItems(dataArg);
 	};
 }
 
