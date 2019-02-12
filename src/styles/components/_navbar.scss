@@ -138,6 +138,13 @@
 					.nav-list__subnav {
 						@extend %js-slides-down--visible;
 					}
+
+					>a {
+						@include desktop {
+							background-color: $navbar-primary-link--hover-bg;
+							color: $navbar-primary-link--hover-color;
+						}
+					}
 				}
 			}
 
@@ -264,6 +271,7 @@
 			position: absolute;
 
 			>a {
+				color: $color-black;
 				transition: color $transition-duration-base ease-in-out;
 
 				&:hover {

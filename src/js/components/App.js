@@ -15,6 +15,13 @@ class App {
 		PageLoader();
 		this.createNav();
 		this.addClickEvents();
+		this.copyrightDate();
+	};
+
+	copyrightDate = () => {
+		document.querySelector(
+			".copyright"
+		).innerHTML = `&copy; ${new Date().getFullYear()} <a href="https://www.hugeinc.com/" target="_blank" rel="external nofollow noopener noreferrer">Huge.</a> All Rights Reserved.`;
 	};
 
 	windowResize = () => {
