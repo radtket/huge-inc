@@ -49,8 +49,12 @@ class App {
 			);
 
 		document.querySelector(".site-overlay").addEventListener("click", e => {
-			const { classList } = e.target;
-			classList.remove("is-visible");
+			const { classList: siteOverlayClassList } = e.target;
+			const { classList: bodyClassList } = document.body;
+			siteOverlayClassList.remove("is-visible");
+			if (bodyClassList.contains("drawer-open")) {
+				bodyClassList.remove("drawer-open");
+			}
 			this.toggleSlide.SlideUpAllOpenSubNavs();
 		});
 
