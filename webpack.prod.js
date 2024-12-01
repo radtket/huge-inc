@@ -8,7 +8,7 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const SharpPlugin = require("responsive-loader/sharp");
 const cssnano = require("cssnano");
 
-const buildPath = path.resolve(__dirname, "public");
+const buildPath = path.resolve(__dirname, "docs");
 
 module.exports = {
 	devtool: "source-map",

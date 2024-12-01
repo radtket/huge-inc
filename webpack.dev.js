@@ -8,7 +8,7 @@ module.exports = {
 	entry: "./src/js/index.js",
 	output: {
 		filename: "[name].[hash:20].js",
-		path: path.join(__dirname, "public")
+		path: path.join(__dirname, "docs")
 	},
 	devServer: {
 		port: 3000,

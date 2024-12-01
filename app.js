@@ -6,7 +6,7 @@ const api = require("./api");
 const app = express();
 
 app.use(logger("dev"));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "docs")));
 app.use("/api", api);
 
 // Fetch Nav JSON
